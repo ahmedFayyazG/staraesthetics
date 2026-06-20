@@ -4,6 +4,22 @@
   padding: 0;
 }
 
+/* ResizableNavbar responsive helpers */
+.rn-desktop {
+  display: none !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.rn-mobile {
+  display: flex !important;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .rn-desktop { display: flex !important; }
+  .rn-mobile  { display: none !important; }
+}
+
 html,
 body,
 #root {

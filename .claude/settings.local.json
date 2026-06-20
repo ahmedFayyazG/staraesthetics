@@ -6,7 +6,37 @@
       "Bash(sudo npm install -g vercel)",
       "Bash(npx vercel *)",
       "Read(//Users/ahmed/.vercel/**)",
-      "Read(//Users/ahmed/.config/vercel/**)"
+      "Read(//Users/ahmed/.config/vercel/**)",
+      "Read(//Users/ahmed/Downloads/**)",
+      "Bash(npx create-next-app@latest star-aesthetics --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-eslint --yes)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('Next:', p.dependencies.next, 'TW:', p.dependencies.tailwindcss||p.devDependencies.tailwindcss\\)\")",
+      "Bash(mkdir -p /Users/ahmed/Downloads/star-aesthetics/src/lib /Users/ahmed/Downloads/star-aesthetics/src/components/layout /Users/ahmed/Downloads/star-aesthetics/src/components/ui /Users/ahmed/Downloads/star-aesthetics/src/components/home /Users/ahmed/Downloads/star-aesthetics/src/components/shared)",
+      "Bash(mkdir -p /Users/ahmed/Downloads/star-aesthetics/src/app/treatments/\\\\[slug\\\\] /Users/ahmed/Downloads/star-aesthetics/src/app/prices /Users/ahmed/Downloads/star-aesthetics/src/app/gallery /Users/ahmed/Downloads/star-aesthetics/src/app/about /Users/ahmed/Downloads/star-aesthetics/src/app/book /Users/ahmed/Downloads/star-aesthetics/src/app/contact /Users/ahmed/Downloads/star-aesthetics/src/app/romford /Users/ahmed/Downloads/star-aesthetics/src/app/faq /Users/ahmed/Downloads/star-aesthetics/src/app/blog/\\\\[slug\\\\] /Users/ahmed/Downloads/star-aesthetics/src/app/legal)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://star-aesthetics.vercel.app)",
+      "Bash(curl -s https://star-aesthetics.vercel.app)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s \"https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,300,600&display=swap\")",
+      "Bash(mkdir -p /Users/ahmed/Downloads/star-aesthetics/public/fonts)",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/7GWNQ5AHAZORLOWZ7ELKPLOIQITAR5S5/NYLYMGXMB4RANWVNJSIHG2IKPZ44CN5E/MT4CWVHB3N2C6KFUZ75QK4JQ2FYK4J4M.woff2\" -o /Users/ahmed/Downloads/star-aesthetics/public/fonts/cabinet-grotesk-300.woff2)",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2\" -o /Users/ahmed/Downloads/star-aesthetics/public/fonts/cabinet-grotesk-400.woff2)",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/CKQBK2QBTCDREE7L3MXZ3PPW7LDNJCWU/OTOY7FQFSFOJVZKJWKO2EHUJLOGBDN4Q/4CO2ETY7NITKLUDKMYJ75RHJSPHOJ7XT.woff2\" -o /Users/ahmed/Downloads/star-aesthetics/public/fonts/cabinet-grotesk-500.woff2)",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2\" -o /Users/ahmed/Downloads/star-aesthetics/public/fonts/cabinet-grotesk-700.woff2)",
+      "Bash(xargs sed -i '' -e 's/#fdfaf6/#ffffff/g' -e 's/#FDFAF6/#ffffff/g' -e 's/#f7f6f4/#ffffff/g' -e 's/#F7F6F4/#ffffff/g' -e 's/#eceae6/#f0f0f0/g')",
+      "Bash(xargs sed -i '' -e 's/rgba\\(26,23,20,0\\\\.06\\)/rgba\\(26,23,20,0.10\\)/g' -e 's/rgba\\(26,23,20,0\\\\.07\\)/rgba\\(26,23,20,0.11\\)/g' -e 's/rgba\\(26,23,20,0\\\\.08\\)/rgba\\(26,23,20,0.12\\)/g')",
+      "Bash(xargs sed -i '' 's/var\\(--font-cormorant\\)/var\\(--font-montserrat\\)/g')",
+      "Bash(ls /tmp/*.png /tmp/*.jpg 2>/dev/null | head -10; ls ~/Downloads/*.png 2>/dev/null | grep -i star | head -5)",
+      "Read(//private/tmp/**)",
+      "Bash(cp \"/Users/ahmed/Downloads/Black and Beige Modern Stars Logo/1.png\" /Users/ahmed/Downloads/star-aesthetics/public/logo-black.png)",
+      "Bash(cp \"/Users/ahmed/Downloads/Black and Beige Modern Stars Logo/2.png\" /Users/ahmed/Downloads/star-aesthetics/public/logo-light.png)",
+      "Bash(ls -t ~/Downloads/*.png ~/Downloads/*.jpg ~/Desktop/*.png ~/Desktop/*.jpg 2>/dev/null | head -10)",
+      "Read(//Users/ahmed/Desktop/**)",
+      "Bash(find ~/Downloads ~/Desktop ~/Pictures -name \"*.png\" -newer /Users/ahmed/Downloads/star-aesthetics/public/logo-light.png 2>/dev/null | head -10)",
+      "Read(//Users/ahmed/Pictures/**)",
+      "Bash(cp \"/Users/ahmed/Downloads/Lime and Black Modern Finance Logo.png\" /Users/ahmed/Downloads/star-aesthetics/public/bot-logo.png && echo \"done\")"
+    ],
+    "additionalDirectories": [
+      "/Users/ahmed/Downloads"
     ]
   }
 }

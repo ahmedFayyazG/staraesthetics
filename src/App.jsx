@@ -1,18 +1,21 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import AppointmentBooking from "./AppointmentBooking.jsx";
-import { FloatingNav } from "./components/ui/FloatingNav.jsx";
 import {
-  IconSparkles,
-  IconBuildingHospital,
-  IconPhoto,
-  IconCalendar,
-  IconBook2,
-  IconMail,
-} from "@tabler/icons-react";
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarLogo,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "./components/ui/ResizableNavbar.jsx";
 import sourceHtml from "../Hero.dc.html?raw";
 import heroBackgroundUrl from "../assets/hero-bg.png";
 import mobileHeroBackgroundUrl from "../assets/mobile-hero-bg.png";
+import starLogoUrl from "./star-logo.svg";
 
 
 function getResultsSection() {
@@ -237,15 +240,16 @@ function useHeroInteractions(rootRef) {
 export default function App() {
   const rootRef = useRef(null);
   const pageMarkup = useMemo(getPageMarkup, []);
-  const iconSize = 14;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = useMemo(
     () => [
-      { name: "Treatments", link: "#treatments", icon: <IconSparkles size={iconSize} /> },
-      { name: "The Clinic", link: "#clinic", icon: <IconBuildingHospital size={iconSize} /> },
-      { name: "Results", link: "#results", icon: <IconPhoto size={iconSize} /> },
-      { name: "Appointments", link: "#appointments", icon: <IconCalendar size={iconSize} /> },
-      { name: "Journal", link: "#journal", icon: <IconBook2 size={iconSize} /> },
-      { name: "Contact", link: "#contact", icon: <IconMail size={iconSize} /> },
+      { name: "Treatments", link: "#treatments" },
+      { name: "The Clinic", link: "#clinic" },
+      { name: "Results", link: "#results" },
+      { name: "Appointments", link: "#appointments" },
+      { name: "Journal", link: "#journal" },
+      { name: "Contact", link: "#contact" },
     ],
     []
   );
@@ -254,7 +258,62 @@ export default function App() {
 
   return (
     <>
-      <FloatingNav navItems={navItems} />
+      <Navbar>
+        {/* Desktop */}
+        <NavBody>
+          <NavbarLogo logo={starLogoUrl} logoAlt="Star Aesthetics" name="Star Aesthetics" />
+          <NavItems items={navItems} />
+          <NavbarButton href="#appointments" variant="primary">
+            Book Now
+          </NavbarButton>
+        </NavBody>
+
+        {/* Mobile */}
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo logo={starLogoUrl} logoAlt="Star Aesthetics" name="Star Aesthetics" />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((o) => !o)}
+            />
+          </MobileNavHeader>
+
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            {navItems.map((item, idx) => (
+              <a
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: "15px",
+                  fontWeight: 300,
+                  letterSpacing: "0.04em",
+                  color: "rgba(255, 253, 250, 0.78)",
+                  textDecoration: "none",
+                  padding: "8px 0",
+                  width: "100%",
+                  borderBottom: "1px solid rgba(255,255,255,0.06)",
+                }}
+              >
+                {item.name}
+              </a>
+            ))}
+            <NavbarButton
+              href="#appointments"
+              variant="primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+              style={{ width: "100%", marginTop: "8px" }}
+            >
+              Book Now
+            </NavbarButton>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+
       <main
         ref={rootRef}
         className="react-page"
