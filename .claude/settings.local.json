@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(sudo npm install -g vercel)",
+      "Bash(npx vercel *)",
+      "Read(//Users/ahmed/.vercel/**)",
+      "Read(//Users/ahmed/.config/vercel/**)"
+    ]
+  }
+}

@@ -1,11 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import AppointmentBooking from "./AppointmentBooking.jsx";
-import PillNav from "./PillNav.jsx";
+import { FloatingNav } from "./components/ui/FloatingNav.jsx";
+import {
+  IconSparkles,
+  IconBuildingHospital,
+  IconPhoto,
+  IconCalendar,
+  IconBook2,
+  IconMail,
+} from "@tabler/icons-react";
 import sourceHtml from "../Hero.dc.html?raw";
 import heroBackgroundUrl from "../assets/hero-bg.png";
 import mobileHeroBackgroundUrl from "../assets/mobile-hero-bg.png";
-import starLogoUrl from "./star-logo.svg";
+
 
 function getResultsSection() {
   const results = [
@@ -229,14 +237,15 @@ function useHeroInteractions(rootRef) {
 export default function App() {
   const rootRef = useRef(null);
   const pageMarkup = useMemo(getPageMarkup, []);
+  const iconSize = 14;
   const navItems = useMemo(
     () => [
-      { label: "Treatments", href: "#treatments" },
-      { label: "The Clinic", href: "#clinic" },
-      { label: "Results", href: "#results" },
-      { label: "Appointments", href: "#appointments" },
-      { label: "Journal", href: "#journal" },
-      { label: "Contact", href: "#contact" }
+      { name: "Treatments", link: "#treatments", icon: <IconSparkles size={iconSize} /> },
+      { name: "The Clinic", link: "#clinic", icon: <IconBuildingHospital size={iconSize} /> },
+      { name: "Results", link: "#results", icon: <IconPhoto size={iconSize} /> },
+      { name: "Appointments", link: "#appointments", icon: <IconCalendar size={iconSize} /> },
+      { name: "Journal", link: "#journal", icon: <IconBook2 size={iconSize} /> },
+      { name: "Contact", link: "#contact", icon: <IconMail size={iconSize} /> },
     ],
     []
   );
@@ -245,17 +254,7 @@ export default function App() {
 
   return (
     <>
-      <PillNav
-        logo={starLogoUrl}
-        logoAlt="Star Aesthetics"
-        items={navItems}
-        activeHref="#treatments"
-        baseColor="rgba(255,253,250,0.78)"
-        pillColor="#2c2820"
-        pillTextColor="#fffdfa"
-        hoveredPillTextColor="#2c2820"
-        initialLoadAnimation
-      />
+      <FloatingNav navItems={navItems} />
       <main
         ref={rootRef}
         className="react-page"
